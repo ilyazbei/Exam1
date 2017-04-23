@@ -25,6 +25,7 @@ namespace Exam1.Controllers
         [Route("")]
         public IActionResult Index()
         {
+            
             if(TempData != null ) {
 
                 ViewBag.sesErrors = TempData["sesErrors"];
