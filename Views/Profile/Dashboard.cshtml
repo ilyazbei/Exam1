@@ -1,0 +1,134 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="TOPBAR" class="container">
+    <div class="row">
+        <div class="col-sm-10"><h2>Hi &nbsp<span>@ViewBag.CurUser.userName!</span></h2></div>
+        <div class="col-sm-1"><h2><a href="/users"><button class="btn btn-info">All Users</button></a></h2></div>
+        <div class="col-sm-1"><h2><a href="/logout"><button class="btn btn-danger">Logout</button></a></h2></div>
+    </div>
+</div><hr>
+
+<div id="CENTER" class="container col-sm-10">
+    <!--<div class="well col-sm-12">-->
+    <div class="container col-sm-5">
+        <div class="row">
+            <h3>Here is your profile description</h3>
+            <textarea disabled class="form-control vresize" id="encCss">@ViewBag.CurUser.description</textarea>
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <label>Your Professional Network</label>
+                </div>
+                <table class="table table-striped ">
+                    <thead>
+                        <tr>
+                            <th class="col-xs-8">Nams</th>
+                            <th class="col-xs-4">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach( var curNetwork in @ViewBag.myNetwork )
+                        {
+                            <tr>
+                                <td class="col-xs-7">
+                                    <spa><a href="/user/@curNetwork.Follower.UserId">@curNetwork.Follower.userName</a></spa>
+                                </td>
+                                <td class="col-xs-5">
+                                    <form action="/remove/@curNetwork.Follower.UserId" method="POST">
+                                        &nbsp <button class="btn btn-warning" type="submit">Remove</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+
+                        @foreach( var curNetwork1 in @ViewBag.myNetwork1 )
+                        {
+                            <tr>
+                                <td class="col-xs-7">
+                                    <spa><a href="/user/@curNetwork1.UserFollowed.UserId">@curNetwork1.UserFollowed.userName</a></spa>
+                                </td>
+                                <td class="col-xs-5">
+                                    <form action="/remove1/@curNetwork1.UserFollowed.UserId" method="POST">
+                                        &nbsp <button class="btn btn-warning" type="submit">Remove</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div> <!--Row ends here-->
+    </div>
+    
+    <div class="container col-sm-offset-1 col-sm-5">
+
+        <div class="row">
+            <h3>Invitations</h3>            
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <label>The following people asked you to be in their network</label>
+                </div>
+                <table class="table table-striped ">
+                    <thead>
+                        <tr>
+                            <th class="col-xs-8">Nams</th>
+                            <th class="col-xs-4">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach( var request in ViewBag.allInEnvites )
+                        {
+                            <tr>
+                                <td class="col-xs-6">
+                                    <spa><a href="/user/@request.Follower.UserId">@request.Follower.userName</a></spa>
+                                </td>
+                                <td class="col-xs-6">
+                                    <form  action="/accept/@request.Follower.UserId" method="POST">
+                                        <button class="btn btn-success col-sm-5">Accept</button>
+                                    </form>
+                                    <form action="/ignore/@request.Follower.UserId" method="POST">
+                                        <button class="btn btn-warning col-sm-offset-1 col-sm-5">Ignore</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <label>The following people you asked to add you</label>
+                </div>
+                <table class="table table-striped ">
+                    <thead>
+                        <tr>
+                            <th class="col-xs-8">Nams</th>
+                            <th class="col-xs-4">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach( var request in ViewBag.allOutEnvites )
+                        {
+                            <tr>
+                                <td class="col-xs-7">
+                                    <spa><a href="/user/@request.UserFollowed.UserId">@request.UserFollowed.userName</a></spa>
+                                </td>
+                                <td class="col-xs-5">
+                                    <form action="/cancel/@request.UserFollowed.UserId" method="POST">
+                                        &nbsp &nbsp<button class="btn btn-warning">Cancel</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div> <!--Row ends here-->
+    </div>
+    <!--</div> -->
+    <!--Well ends here-->
+</div> <!--Container ends here-->

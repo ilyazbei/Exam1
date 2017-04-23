@@ -1,0 +1,20 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div id="TOPBAR" class="container">
+    <div class="row">
+        <div class="col-sm-10"><h2>Hi &nbsp<span>@ViewBag.CurUser.userName!</span></h2></div>
+        <div class="col-sm-1"><h2><a href="/proffessional_profile"><button class="btn btn-info">My Profile</button></a></h2></div>
+        <div class="col-sm-1"><h2><a href="/logout"><button class="btn btn-danger">Logout</button></a></h2></div>
+    </div>
+</div><hr>
+
+<div id="CENTER" class="container col-sm-6">
+    <h3>About &nbsp<span>@ViewBag.thisUser.userName!</span></h3>
+    <div class="well col-sm-12">
+        <label>Description</label>
+        <textarea disabled class="form-control vresize" id="encCss">@ViewBag.thisUser.description!</textarea>
+    </div> <!--Well ends here-->
+</div> <!--Container ends here-->

@@ -1,0 +1,63 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model Exam1.Models.Weddings
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10"><h3>Welcome to Add page: &nbsp <span>@ViewBag.CurUser.firstName @ViewBag.CurUser.lastName</span></h3></div>
+        <div class="col-sm-1"><h3><a href="/Dashboard"><button class="btn btn-info">Dashboard</button></a></h3></div>
+        <div class="col-sm-1"><h3><a href="/logout"><button class="btn btn-danger">Logout</button></a></h3></div>
+    </div>
+</div><hr>
+
+<div id="CENTER" class="container col-sm-6">
+    <div class="well">
+        <!--Errors from Models-->
+        @if(@ViewBag.dateError != null)
+        {
+            <p class="alert alert-danger">@ViewBag.dateError</p>
+        }
+
+        @if (!Html.ViewData.ModelState.IsValid )
+        {
+            <div class="alert alert-danger" asp-validation-summary="All"></div>
+        }
+
+        <form action="Create" method="POST" class="form-horizontal">
+            <legend>Plan Your Wedding</legend>
+            <div class="form-group">
+                <label for="WedderOne" class="col-sm-3 control-label">Wedder One</label>
+                <div class="col-sm-8">
+                    <input name="wedderOne" type="text" id="WedderOne" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="WedderTwo" class="col-sm-3 control-label">Weder Two</label>
+                <div class="col-sm-8">
+                    <input name="wedderTwo" type="text" id="WedderTwo" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Date" class="col-sm-3 control-label">Date</label>
+                <div class="col-sm-8">
+                    <input name="date" type="datetime-local" id="Date" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="WeddingAddress" class="col-sm-3 control-label">Wedding Address</label>
+                <div class="col-sm-8">
+                    <input name="weddingAddress" type="text" id="WeddingAddress" class="form-control"/>
+                </div>
+            </div>
+                     
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-8">
+                    <button class="btn btn-success" type="submit">Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,181 @@
+/*Write all of your CSS here*/
+
+body{
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    /*background-position: center center;*/
+    background-image: url("/images/background1.jpg");
+    background-color: #cccccc;
+}
+#TOPBAR{
+	margin-top: -80px;
+}
+#CENTER1{
+    float: none;
+    margin: 0 auto;
+}
+#CENTER{
+    float: none;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+span{
+	color: red;
+}
+h2{
+	color: white;
+}
+h3{
+	margin-left: 20px;
+	color: white;
+}
+spa{
+	text-decoration: underline;
+	color: blue;
+}
+
+textarea {
+  min-height:65px;
+}
+
+.vresize {
+  resize: vertical; 
+}
+/*this is for scrolling table on all userss page*/
+.table-fixed thead {
+  width: 97%;
+}
+.table-fixed tbody {
+  height: 200px;
+  overflow-y: auto;
+  width: 100%;
+}
+.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+  display: block;
+}
+.table-fixed tbody td, .table-fixed thead > tr> th {
+  float: left;
+  border-bottom-width: 0;
+}
+/*this is for scrolling table on all userss page*/
+
+/*this is for scrolling table on dashboard page*/
+.table-striped thead {
+  width: 97%;
+}
+.table-striped tbody {
+  height: 150px;
+  overflow-y: auto;
+  width: 100%;
+}
+.table-striped thead, .table-striped tbody, .table-striped tr, .table-striped td, .table-striped th {
+  display: block;
+}
+.table-striped tbody td, .table-striped thead > tr> th {
+  float: left;
+  border-bottom-width: 0;
+}
+/*this is for scrolling table*/
+
+
+/*this is for log reg*/
+body {
+    padding-top: 90px;
+}
+.panel-login {
+    border-color: #ccc;
+	-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+}
+.panel-login>.panel-heading {
+	color: #00415d;
+	background-color: #fff;
+	border-color: #fff;
+	text-align:center;
+}
+.panel-login>.panel-heading a{
+	text-decoration: none;
+	color: #666;
+	font-weight: bold;
+	font-size: 15px;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+.panel-login>.panel-heading a.active{
+	color: #029f5b;
+	font-size: 18px;
+}
+.panel-login>.panel-heading hr{
+	margin-top: 10px;
+	margin-bottom: 0px;
+	clear: both;
+	border: 0;
+	height: 1px;
+	background-image: -webkit-linear-gradient(left,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0));
+	background-image: -moz-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+	background-image: -ms-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+	background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+}
+.panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {
+	height: 45px;
+	border: 1px solid #ddd;
+	font-size: 16px;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+.panel-login input:hover,
+.panel-login input:focus {
+	outline:none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border-color: #ccc;
+}
+.btn-login {
+	background-color: #59B2E0;
+	outline: none;
+	color: #fff;
+	font-size: 14px;
+	height: auto;
+	font-weight: normal;
+	padding: 14px 0;
+	text-transform: uppercase;
+	border-color: #59B2E6;
+}
+.btn-login:hover,
+.btn-login:focus {
+	color: #fff;
+	background-color: #53A3CD;
+	border-color: #53A3CD;
+}
+.forgot-password {
+	text-decoration: underline;
+	color: #888;
+}
+.forgot-password:hover,
+.forgot-password:focus {
+	text-decoration: underline;
+	color: #666;
+}
+
+.btn-register {
+	background-color: #1CB94E;
+	outline: none;
+	color: #fff;
+	font-size: 14px;
+	height: auto;
+	font-weight: normal;
+	padding: 14px 0;
+	text-transform: uppercase;
+	border-color: #1CB94A;
+}
+.btn-register:hover,
+.btn-register:focus {
+	color: #fff;
+	background-color: #1CA347;
+	border-color: #1CA347;
+}
